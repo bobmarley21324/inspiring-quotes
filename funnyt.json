@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World's Best Advice + Jokes</title>
+<style>
+  body {
+    background: #e0f7fa;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    padding: 50px;
+    color: #00695c;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  #advice, #joke {
+    font-size: 1.6rem;
+    margin: 20px 30px;
+    min-height: 80px;
+  }
+  #joke {
+    color: #004d40;
+    font-style: italic;
+  }
+  button {
+    background: #00796b;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #004d40;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #004d40;
+  }
+</style>
+</head>
+<body>
+  <h1>World's Best Advice + Jokes</h1>
+  <div id="advice">Click the button to get your life-changing advice!</div>
+  <div id="joke"></div>
+  <button id="adviceBtn">Get Advice & Laugh</button>
+
+  <script>
+    const advices = [
+      "Take breaks often to recharge your mind and body.",
+      "Listen more than you speak — you learn more that way.",
+      "Keep a journal to track your thoughts and progress.",
+      "Practice gratitude daily; it improves your happiness.",
+      "Don’t be afraid to ask for help when you need it.",
+      "Exercise regularly to boost mood and energy.",
+      "Set small, achievable goals to build momentum.",
+      "Learn to say no — your time is valuable.",
+      "Spend time with people who inspire and support you.",
+      "Remember, mistakes are just stepping stones to success."
+    ];
+
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I told my computer I needed a break, and it said 'No problem, I’ll go to sleep.'",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I would tell you a joke about pizza, but it’s a little cheesy.",
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "I’m reading a book on anti-gravity. It’s impossible to put down!",
+      "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+      "Why did the coffee file a police report? It got mugged.",
+      "What do you call fake spaghetti? An impasta!",
+      "Why did the math book look sad? Because it had too many problems."
+    ];
+
+    const adviceDiv = document.getElementById('advice');
+    const jokeDiv = document.getElementById('joke');
+    const adviceBtn = document.getElementById('adviceBtn');
+
+    adviceBtn.addEventListener('click', () => {
+      const randomAdvice = advices[Math.floor(Math.random() * advices.length)];
+      const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+      adviceDiv.textContent = "💡 Advice: " + randomAdvice;
+      jokeDiv.textContent = "😂 Joke: " + randomJoke;
+    });
+  </script>
+</body>
+</html>
